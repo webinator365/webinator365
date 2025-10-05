@@ -7,15 +7,15 @@ export default function WhyUs() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in')
+          if (entry.isIntersecting && !entry.target.classList.contains('is-visible')) {
+            entry.target.classList.add('is-visible')
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.2, rootMargin: '0px' }
     )
 
-    document.querySelectorAll('.fade-on-scroll').forEach((el) => {
+    document.querySelectorAll('.fade-in-view').forEach((el) => {
       observer.observe(el)
     })
 
@@ -24,22 +24,18 @@ export default function WhyUs() {
 
   const reasons = [
     {
-      icon: "⚙️",
       title: "Fatto per te, non per tutti",
       description: "Niente template. Niente soluzioni preconfezionate. Solo software che risolve i tuoi problemi specifici."
     },
     {
-      icon: "🔓",
       title: "È tuo al 100%",
       description: "Il codice, i dati, tutto. Nessuna dipendenza da noi o da altri fornitori."
     },
     {
-      icon: "💰",
       title: "Paghi una volta sola",
       description: "Niente abbonamenti mensili che crescono. Un investimento che si ripaga nel tempo."
     },
     {
-      icon: "🔌",
       title: "Cresce con te",
       description: "Aggiungi funzioni quando serve. Collegalo ad altri strumenti. È flessibile."
     }
@@ -47,22 +43,18 @@ export default function WhyUs() {
 
   const team = [
     {
-      icon: "👥",
       title: "Team esperto",
       description: "Oltre 10 anni di esperienza. Abbiamo già risolto problemi come i tuoi."
     },
     {
-      icon: "🎯",
       title: "Un referente dedicato",
       description: "Una persona che segue il tuo progetto dall'inizio alla fine."
     },
     {
-      icon: "🔄",
       title: "Vedi tutto mentre lavoriamo",
       description: "Aggiornamenti ogni settimana. Puoi dare feedback e cambiare direzione."
     },
     {
-      icon: "⏱️",
       title: "Tempi reali",
       description: "Ti diciamo quanto ci vuole davvero. Budget chiari, consegne puntuali."
     }
@@ -71,49 +63,49 @@ export default function WhyUs() {
   return (
     <>
       {/* Why Custom Section */}
-      <section className="py-20 sm:py-32 px-4 bg-white">
+      <section className="py-16 sm:py-24 md:py-32 px-4 bg-slate-950">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="fade-on-scroll text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="fade-in-view text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
               Perché software su misura
             </h2>
-            <p className="fade-on-scroll fade-in-delay-1 text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="fade-in-view delay-1 text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed px-4">
               Le soluzioni standard sembrano comode. Ma poi ti accorgi dei limiti.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-12 mb-20">
-            <div className="fade-on-scroll">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Software standard</h3>
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-16 sm:mb-20">
+            <div className="fade-in-view px-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Software standard</h3>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-slate-600">
-                  <span className="text-red-500 text-xl flex-shrink-0">✗</span>
+                <li className="flex items-start gap-3 text-sm sm:text-base text-slate-400">
+                  <span className="text-red-500 text-lg sm:text-xl flex-shrink-0 mt-0.5">✗</span>
                   <span>Non si adatta al tuo modo di lavorare</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600">
-                  <span className="text-red-500 text-xl flex-shrink-0">✗</span>
+                <li className="flex items-start gap-3 text-sm sm:text-base text-slate-400">
+                  <span className="text-red-500 text-lg sm:text-xl flex-shrink-0 mt-0.5">✗</span>
                   <span>Costi che aumentano ogni anno</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600">
-                  <span className="text-red-500 text-xl flex-shrink-0">✗</span>
+                <li className="flex items-start gap-3 text-sm sm:text-base text-slate-400">
+                  <span className="text-red-500 text-lg sm:text-xl flex-shrink-0 mt-0.5">✗</span>
                   <span>Funzioni che non usi ma paghi comunque</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600">
-                  <span className="text-red-500 text-xl flex-shrink-0">✗</span>
+                <li className="flex items-start gap-3 text-sm sm:text-base text-slate-400">
+                  <span className="text-red-500 text-lg sm:text-xl flex-shrink-0 mt-0.5">✗</span>
                   <span>Devi adattarti al software, non il contrario</span>
                 </li>
               </ul>
             </div>
 
-            <div className="fade-on-scroll fade-in-delay-1">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Software su misura</h3>
+            <div className="fade-in-view delay-1 px-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Software su misura</h3>
               <div className="space-y-6">
                 {reasons.map((reason, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="text-3xl flex-shrink-0">{reason.icon}</div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">{reason.title}</h4>
-                      <p className="text-slate-600 text-sm">{reason.description}</p>
+                      <h4 className="font-semibold text-white mb-1 text-sm sm:text-base">{reason.title}</h4>
+                      <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">{reason.description}</p>
                     </div>
                   </div>
                 ))}
@@ -124,28 +116,30 @@ export default function WhyUs() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 sm:py-32 px-4 bg-slate-50">
+      <section className="py-16 sm:py-24 md:py-32 px-4 bg-slate-900">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="fade-on-scroll text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="fade-in-view text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
               Come lavoriamo
             </h2>
-            <p className="fade-on-scroll fade-in-delay-1 text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="fade-in-view delay-1 text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed px-4">
               Niente sorprese. Comunicazione chiara, risultati concreti.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             {team.map((item, index) => (
               <div 
                 key={index}
-                className={`fade-on-scroll bg-white p-8 rounded-xl fade-in-delay-${(index % 2) + 1}`}
+                className={`fade-in-view delay-${(index % 2) + 1} bg-slate-800/50 border border-slate-700 p-6 sm:p-8 rounded-xl`}
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-5 h-5 bg-primary rounded"></div>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>

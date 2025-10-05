@@ -22,12 +22,12 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md' : 'bg-white'
+      scrolled ? 'bg-slate-950/95 backdrop-blur-md shadow-lg' : 'bg-slate-950/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="#" className="font-bold text-xl text-slate-900">
+          <a href="#" className="font-bold text-lg sm:text-xl text-white">
             WEBINATOR<span className="text-primary">365</span>
           </a>
 
@@ -37,14 +37,14 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
+                className="text-slate-300 hover:text-white font-medium transition-colors text-sm"
               >
                 {item.name}
               </a>
             ))}
             <a
               href="#contact"
-              className="bg-primary hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+              className="bg-primary hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors text-sm"
             >
               Inizia ora
             </a>
@@ -57,23 +57,23 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <div className="w-6 flex flex-col gap-1.5">
-              <span className={`h-0.5 w-full bg-slate-900 transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`h-0.5 w-full bg-slate-900 transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-              <span className={`h-0.5 w-full bg-slate-900 transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`h-0.5 w-full bg-white transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`h-0.5 w-full bg-white transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+              <span className={`h-0.5 w-full bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </div>
           </button>
         </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200">
+          <div className="md:hidden py-4 border-t border-slate-800">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-slate-600 hover:text-slate-900 font-medium"
+                  className="text-slate-300 hover:text-white font-medium"
                 >
                   {item.name}
                 </a>

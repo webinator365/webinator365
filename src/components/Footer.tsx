@@ -1,20 +1,22 @@
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-12 px-4">
+    <footer className="bg-black text-white py-12 px-4 border-t border-slate-900">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">WEBINATOR<span className="text-primary">365</span></h3>
-            <p className="text-slate-400 leading-relaxed">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">
+              WEBINATOR<span className="text-primary">365</span>
+            </h3>
+            <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
               Software su misura<br />per chi vuole crescere
             </p>
           </div>
 
           {/* Servizi */}
           <div>
-            <h4 className="font-semibold mb-4">Cosa facciamo</h4>
-            <ul className="space-y-2 text-slate-400 text-sm">
+            <h4 className="font-semibold mb-4 text-sm sm:text-base">Cosa facciamo</h4>
+            <ul className="space-y-2 text-slate-400 text-xs sm:text-sm">
               <li><a href="#services" className="hover:text-white transition-colors">Gestionali e CRM</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">App Mobile</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Siti Web</a></li>
@@ -25,8 +27,8 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Azienda</h4>
-            <ul className="space-y-2 text-slate-400 text-sm">
+            <h4 className="font-semibold mb-4 text-sm sm:text-base">Azienda</h4>
+            <ul className="space-y-2 text-slate-400 text-xs sm:text-sm">
               <li><a href="#" className="hover:text-white transition-colors">Chi siamo</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Progetti</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Come lavoriamo</a></li>
@@ -36,8 +38,8 @@ export default function Footer() {
 
           {/* Contatti */}
           <div>
-            <h4 className="font-semibold mb-4">Scrivici</h4>
-            <ul className="space-y-2 text-slate-400 text-sm">
+            <h4 className="font-semibold mb-4 text-sm sm:text-base">Scrivici</h4>
+            <ul className="space-y-2 text-slate-400 text-xs sm:text-sm">
               <li>info@webinator365.com</li>
               <li>Ti rispondiamo in 24h</li>
               <li className="pt-4">
@@ -58,7 +60,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-center text-slate-400 text-sm">
+        <div className="border-t border-slate-900 pt-8 text-center text-slate-500 text-xs sm:text-sm">
           <p>&copy; {new Date().getFullYear()} Webinator365 • P.IVA 00000000000</p>
         </div>
       </div>

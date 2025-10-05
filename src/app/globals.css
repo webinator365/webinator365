@@ -5,7 +5,7 @@
 :root {
   --primary: #0066CC;
   --secondary: #FF6B35;
-  --dark: #1a1a1a;
+  --dark: #0a0a0a;
 }
 
 * {
@@ -15,11 +15,11 @@
 }
 
 body {
-  color: var(--dark);
+  color: #e5e7eb;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f8f9fa;
+  background: #0a0a0a;
 }
 
 html {
@@ -38,21 +38,24 @@ html {
   }
 }
 
-.fade-in {
+.fade-in-view {
   opacity: 0;
+}
+
+.fade-in-view.is-visible {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.fade-in-delay-1 {
-  animation-delay: 0.2s;
+.fade-in-view.is-visible.delay-1 {
+  animation-delay: 0.15s;
 }
 
-.fade-in-delay-2 {
-  animation-delay: 0.4s;
+.fade-in-view.is-visible.delay-2 {
+  animation-delay: 0.3s;
 }
 
-.fade-in-delay-3 {
-  animation-delay: 0.6s;
+.fade-in-view.is-visible.delay-3 {
+  animation-delay: 0.45s;
 }
 
 /* Infinite scroll animation */
@@ -93,4 +96,22 @@ html {
 /* Smooth transitions */
 a, button {
   transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0052a3;
 }
