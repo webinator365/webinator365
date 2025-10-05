@@ -1,110 +1,135 @@
-'use client'
-
-import { useState } from 'react'
-
 export default function WhyUs() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-
   const reasons = [
     {
-      icon: "💪",
-      title: "Competenze tecniche reali, non solo chiacchiere",
-      color: "from-blue-500 to-cyan-500"
+      icon: "⚙️",
+      title: "Progettato sui tuoi processi specifici",
+      description: "Non partiamo da una soluzione standard. Studiamo il tuo contesto reale per comprendere obiettivi, limiti e opportunità."
     },
     {
-      icon: "🎨",
-      title: "Progetti su misura, non template preconfezionati",
-      color: "from-purple-500 to-pink-500"
+      icon: "🔓",
+      title: "Piena proprietà e controllo del codice",
+      description: "Il software è tuo al 100%. Nessun vendor lock-in, nessuna dipendenza dal fornitore."
     },
     {
-      icon: "💬",
-      title: "Disponibilità e comunicazione chiara",
-      color: "from-green-500 to-emerald-500"
+      icon: "💰",
+      title: "Investimento una tantum, ROI garantito",
+      description: "Niente canoni mensili crescenti. Un investimento iniziale che si ripaga nel tempo."
     },
     {
-      icon: "🚀",
-      title: "Tecnologie moderne e scalabili",
-      color: "from-orange-500 to-red-500"
+      icon: "🔌",
+      title: "Flessibilità e possibilità di integrazioni",
+      description: "Il tuo software cresce con la tua azienda. Integrazioni native con i tuoi strumenti esistenti."
+    }
+  ]
+
+  const team = [
+    {
+      icon: "👥",
+      title: "Team senior con +10 anni di esperienza",
+      description: "Sviluppatori e consulenti che hanno già risolto le sfide che stai affrontando"
     },
     {
-      icon: "🛡️",
-      title: "Supporto continuo, 365 giorni l'anno",
-      color: "from-indigo-500 to-purple-500"
+      icon: "🎯",
+      title: "Un referente dedicato per il tuo progetto",
+      description: "Una persona che conosce il tuo business e ti segue in ogni fase"
+    },
+    {
+      icon: "🔄",
+      title: "Sviluppo iterativo con feedback costanti",
+      description: "Vedi i progressi settimanalmente e guidi le scelte insieme a noi"
+    },
+    {
+      icon: "⏱️",
+      title: "Pianificazione realistica e milestone chiare",
+      description: "Tempi rispettati, budget trasparenti, consegne puntuali"
     }
   ]
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 animate-fade-in-up">
-            Perché Webinator365
-          </h2>
-          <p className="text-lg sm:text-xl text-slate-600 animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
-            Il partner tecnologico su cui puoi contare
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
-          {reasons.map((reason, index) => (
-            <div 
-              key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 animate-fade-in-up cursor-pointer transform hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Gradient background on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${reason.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`} />
-              
-              {/* Icon */}
-              <div className={`text-3xl sm:text-4xl flex-shrink-0 transform transition-all duration-300 ${hoveredIndex === index ? 'scale-125 rotate-12' : ''}`}>
-                {reason.icon}
-              </div>
-              
-              {/* Text */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-start gap-2">
-                  <div className={`text-2xl sm:text-3xl font-bold ${hoveredIndex === index ? 'text-primary' : 'text-slate-300'} transition-colors duration-300 flex-shrink-0`}>
-                    ✓
+    <>
+      {/* Why Custom Section */}
+      <section className="py-20 sm:py-32 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+              Perché scegliere la personalizzazione
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Webinator365 non parte da una soluzione standard. Studia il contesto reale per comprendere obiettivi, limiti e opportunità.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-12 mb-20">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Software standard</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-slate-600">
+                  <span className="text-red-500 text-xl">✗</span>
+                  <span>Rigidità nei processi e workflow</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-600">
+                  <span className="text-red-500 text-xl">✗</span>
+                  <span>Costi occulti e canoni crescenti</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-600">
+                  <span className="text-red-500 text-xl">✗</span>
+                  <span>Inefficienze operative</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-600">
+                  <span className="text-red-500 text-xl">✗</span>
+                  <span>Dipendenza dal fornitore</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Software su misura</h3>
+              <div className="space-y-6">
+                {reasons.map((reason, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="text-3xl flex-shrink-0">{reason.icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-1">{reason.title}</h4>
+                      <p className="text-slate-600 text-sm">{reason.description}</p>
+                    </div>
                   </div>
-                  <p className="text-base sm:text-lg text-slate-700 group-hover:text-slate-900 transition-colors duration-300 leading-snug">
-                    {reason.title}
-                  </p>
-                </div>
-              </div>
-
-              {/* Shine effect */}
-              {hoveredIndex === index && (
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shine" />
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Stats section */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          {[
-            { value: "100+", label: "Progetti" },
-            { value: "50+", label: "Clienti" },
-            { value: "365", label: "Giorni/Anno" },
-            { value: "24/7", label: "Supporto" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1 sm:mb-2">
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm text-slate-600">
-                {stat.label}
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 sm:py-32 px-4 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+              Chi ti affiancherà
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Un team di professionisti esperti al tuo fianco per trasformare le tue idee in soluzioni concrete
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-8">
+            {team.map((item, index) => (
+              <div 
+                key={index}
+                className="bg-white p-8 rounded-2xl"
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
